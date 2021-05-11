@@ -62,9 +62,9 @@ function lastArray(arr, n) {
 }
 
 // Test Cases:
-console.log(lastArray([1, 2, 3, 4, 5], 2)); //Expected [ 4, 5 ]
-console.log(lastArray([1, 2, 3], 6)); //Expected  [ 1, 2, 3 ]
-console.log(lastArray([1, 2, 3, 4, 5, 6, 7, 8], 3)); //Expected [ 6, 7, 8 ]
+// console.log(lastArray([1, 2, 3, 4, 5], 2)); //Expected [ 4, 5 ]
+// console.log(lastArray([1, 2, 3], 6)); //Expected  [ 1, 2, 3 ]
+// console.log(lastArray([1, 2, 3, 4, 5, 6, 7, 8], 3)); //Expected [ 6, 7, 8 ]
 
 // ***************************************
 // 4. Return the average of an array of numbers
@@ -81,12 +81,27 @@ function averageArray(arr) {
 }
 
 // Test Cases:
-console.log(averageArray([10, 100, 40])); //Expected 50
-console.log(averageArray([10, 100, 1000])); //Expected 370
-console.log(averageArray([-50, 0, 50, 200])); //Expected 50
+// console.log(averageArray([10, 100, 40])); //Expected 50
+// console.log(averageArray([10, 100, 1000])); //Expected 370
+// console.log(averageArray([-50, 0, 50, 200])); //Expected 50
 
 // ***************************************
 
-// ***************************************
+//5.  Create a range of numbers***************************************
 
+// Write a function that takes two numbers, say min and max, as arguments
+// Return an array of numbers in the range min to max
+function minMaxRange(min, max) {
+  let minMax = [];
+  for (let i = min; i <= max; i++) {
+    minMax.push(i);
+  }
+  return minMax;
+}
+
+// Test Cases:
+console.log(minMaxRange(2, 10)); // Expected [2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(minMaxRange(1, 3)); // Expected [1, 2, 3]
+console.log(minMaxRange(-5, 5)); //Expected [-5, -4, -3, -2, -1, 0,  1,  2,  3,  4, 5]
+console.log(minMaxRange(2, 7)); //Expected [2, 3, 4, 5, 6, 7]
 // ***************************************
