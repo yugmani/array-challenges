@@ -117,18 +117,64 @@ function removeItemArray(arr, a) {
 }
 
 // Test Cases:
-consoole.log(removeItemArray([1, 2, 3], 2)); // Expected [1, 3]
-consoole.log(removeItemArray([1, 2, '2'], '2')); //Expected  [1, 2]
-consoole.log(removeItemArray([false, '2', 1], false)); //Expected  ['2', 1]
-consoole.log(removeItemArray([1, 2, '2', 1], 1)); //Expected  [2, '2']
+// console.log(removeItemArray([1, 2, 3], 2)); // Expected [1, 3]
+// console.log(removeItemArray([1, 2, '2'], '2')); //Expected  [1, 2]
+// console.log(removeItemArray([false, '2', 1], false)); //Expected  ['2', 1]
+// console.log(removeItemArray([1, 2, '2', 1], 1)); //Expected  [2, '2']
 
 // ***************************************
-
+// 7. Sum up all array elements with values greater than
 // ***************************************
 
-// ***************************************
+// Write a function that takes an array and a number, say num, as arguments
+// Sum up all array elements with a value greater than num
+// Return the sum
+
+//My Code
+function sumOfGreater(arr, num) {
+  return arr
+    .filter(item => item > num)
+    .reduce((total, currentValue) => {
+      return total + currentValue;
+    }, 0);
+}
+
+//Author's code
+// function sumOfGreater(arr, num) {
+//   return arr.reduce((sum, cur) => {
+//     if (cur > num) return sum + cur;
+//     return sum;
+//   }, 0);
+// }
+
+// Test Cases:
+console.log(sumOfGreater([1, 2, 3, 4, 5, 6, 7], 2)); //Expected  25
+console.log(sumOfGreater([-10, -11, -3, 1, -4], -3)); //Expected  1
+console.log(sumOfGreater([78, 99, 100, 101, 401], 99)); //Expected  602
 
 // ***************************************
+// 8. Check if all array elements are equal
+// ***************************************
+
+// Write a function that takes an array as argument
+// It should return true if all elements in the array are equal
+// It should return false otherwise
+//My Code
+function ifItemsEqual(arr) {
+  let first = arr[0];
+  return arr.every(item => item === first);
+}
+
+//Author's code
+// function ifItemsEqual(input) {
+//   return new Set(input).size === 1;
+// }
+
+// Test Cases:
+console.log(ifItemsEqual([true, true, true, true])); //Expected true
+console.log(ifItemsEqual(['test', 'test', 'test'])); //Expected true
+console.log(ifItemsEqual([1, 1, 1, 2])); // Expected false
+console.log(ifItemsEqual(['10', 10, 10, 10])); //Expected  false
 
 // ***************************************
 
