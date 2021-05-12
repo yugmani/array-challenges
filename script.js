@@ -205,8 +205,26 @@ function longestString(input) {
 // console.log(longestString(['I', 'need', 'candy'])); //Expected 'candy'
 
 // ***************************************
-// 9. Return the longest string from an array of strings
+// 9. Merge an arbitrary number of arrays
 // ***************************************
+
+// Write a function that takes arguments an arbitrary number of arrays
+// It should return an array containing the values of all arrays
+
+//My Code
+function mergeArrays(...arr) {
+  return arr.reduce((a, b) => a.concat(b));
+}
+
+//Author's code
+function mergeArrays(...arrays) {
+  return arrays.flat();
+}
+
+// Test Cases:
+// console.log(mergeArrays([1, 2, 3], [4, 5, 6])); //Expected [1, 2, 3, 4, 5, 6]
+// console.log(mergeArrays(['a', 'b', 'c'], [4, 5, 6])); //Expected ['a', 'b', 'c', 4, 5, 6]
+// console.log(mergeArrays([true, true], [1, 2], ['a', 'b'])); //Expected  [true, true, 1, 2, 'a', 'b']
 
 // ***************************************
 // 9. Return the longest string from an array of strings
