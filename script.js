@@ -86,8 +86,8 @@ function averageArray(arr) {
 // console.log(averageArray([-50, 0, 50, 200])); //Expected 50
 
 // ***************************************
-
-//5.  Create a range of numbers***************************************
+//5.  Create a range of numbers
+// ***************************************
 
 // Write a function that takes two numbers, say min and max, as arguments
 // Return an array of numbers in the range min to max
@@ -100,8 +100,36 @@ function minMaxRange(min, max) {
 }
 
 // Test Cases:
-console.log(minMaxRange(2, 10)); // Expected [2, 3, 4, 5, 6, 7, 8, 9, 10]
-console.log(minMaxRange(1, 3)); // Expected [1, 2, 3]
-console.log(minMaxRange(-5, 5)); //Expected [-5, -4, -3, -2, -1, 0,  1,  2,  3,  4, 5]
-console.log(minMaxRange(2, 7)); //Expected [2, 3, 4, 5, 6, 7]
+// console.log(minMaxRange(2, 10)); // Expected [2, 3, 4, 5, 6, 7, 8, 9, 10]
+// console.log(minMaxRange(1, 3)); // Expected [1, 2, 3]
+// console.log(minMaxRange(-5, 5)); //Expected [-5, -4, -3, -2, -1, 0,  1,  2,  3,  4, 5]
+// console.log(minMaxRange(2, 7)); //Expected [2, 3, 4, 5, 6, 7]
+
+// ***************************************
+// 6. Remove a specific array element
+// ***************************************
+
+// Write a function that takes an array and a value as argument
+// The function should clean the array from all occurrences of the given value and return the the cleaned version
+
+function removeItemArray(arr, a) {
+  return arr.filter(item => item !== a);
+}
+
+// Test Cases:
+consoole.log(removeItemArray([1, 2, 3], 2)); // Expected [1, 3]
+consoole.log(removeItemArray([1, 2, '2'], '2')); //Expected  [1, 2]
+consoole.log(removeItemArray([false, '2', 1], false)); //Expected  ['2', 1]
+consoole.log(removeItemArray([1, 2, '2', 1], 1)); //Expected  [2, '2']
+
+// ***************************************
+
+// ***************************************
+
+// ***************************************
+
+// ***************************************
+
+// ***************************************
+
 // ***************************************
