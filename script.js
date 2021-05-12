@@ -177,5 +177,41 @@ console.log(ifItemsEqual([1, 1, 1, 2])); // Expected false
 console.log(ifItemsEqual(['10', 10, 10, 10])); //Expected  false
 
 // ***************************************
+// 9. Return the longest string from an array of strings
+// ***************************************
+// Write a function that takes an array of strings as argument
+// It should return the longest string
 
+//My Code
+// function longestString(arr) {
+//   let max = arr[0].length;
+//   let index = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i].length);
+//     if (arr[i].length > max) {
+//       max = arr[i].length;
+//       index = i;
+//     }
+//   }
+//   return arr[index];
+// }
+
+//Author's code
+function longestString(input) {
+  return input.reduce((a, b) => (a.length <= b.length ? b : a));
+}
+// Test Cases:
+// console.log(longestString(['help', 'me'])); //Expected 'help'
+// console.log(longestString(['I', 'need', 'candy'])); //Expected 'candy'
+
+// ***************************************
+// 9. Return the longest string from an array of strings
+// ***************************************
+
+// ***************************************
+// 9. Return the longest string from an array of strings
+// ***************************************
+
+// ***************************************
+// 9. Return the longest string from an array of strings
 // ***************************************
