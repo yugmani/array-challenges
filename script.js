@@ -227,9 +227,34 @@ function mergeArrays(...arrays) {
 // console.log(mergeArrays([true, true], [1, 2], ['a', 'b'])); //Expected  [true, true, 1, 2, 'a', 'b']
 
 // ***************************************
-// 9. Return the longest string from an array of strings
+// 9. Merge two arrays with duplicate values
+// ***************************************
+
+// Write a function that takes two arrays as arguments
+// Merge both arrays and remove duplicate values
+// Sort the merge result in ascending order
+// Return the resulting array
+
+//My Code
+function removeDuplicateAndMerge(arr1, arr2) {
+  const mergedArray = arr1.concat(arr2);
+  const sortArray = mergedArray.sort(function(a, b) {
+    return a - b;
+  });
+  return new Set(sortArray);
+}
+
+//Author's Code
+// function removeDuplicateAndMerge(first, second) {
+//   return [...new Set([...first, ...second])].sort((a, b) => a - b);
+// }
+
+// Test Cases:
+// console.log(removeDuplicateAndMerge([1, 2, 3], [3, 4, 5])); //Expected [ 1, 2, 3, 4, 5 ]
+// console.log(removeDuplicateAndMerge([-10, 22, 333, 42], [-11, 5, 22, 41, 42])); //Expected [ -11, -10, 5, 22, 41,  42, 333]
+
 // ***************************************
 
 // ***************************************
-// 9. Return the longest string from an array of strings
-// ***************************************
+
+// https://www.jschallenger.com/overview
