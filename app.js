@@ -230,8 +230,14 @@ let numbers = new Array(3); // will it create an array of [3] ?
 // console.log(numbers); // (3) [empty × 3]length: 3
 // To avoid such surprises, we usually use square brackets, unless we really know what we’re doing.
 
+// ***** Multidimenstional arrays ******
 
+// Arrays can have items that are also arrays.
+//We can use it for multidimensional arrays, for example to store matrices:
 
+let matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
+// console.log(matrix[1]); // (3) [4, 5, 6]
+// console.log(matrix[2][0]); // 7 -> first element of third subarray
 
 // https://javascript.info/array
