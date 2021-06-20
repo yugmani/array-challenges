@@ -148,9 +148,9 @@ function sumOfGreater(arr, num) {
 // }
 
 // Test Cases:
-console.log(sumOfGreater([1, 2, 3, 4, 5, 6, 7], 2)); //Expected  25
-console.log(sumOfGreater([-10, -11, -3, 1, -4], -3)); //Expected  1
-console.log(sumOfGreater([78, 99, 100, 101, 401], 99)); //Expected  602
+// console.log(sumOfGreater([1, 2, 3, 4, 5, 6, 7], 2)); //Expected  25
+// console.log(sumOfGreater([-10, -11, -3, 1, -4], -3)); //Expected  1
+// console.log(sumOfGreater([78, 99, 100, 101, 401], 99)); //Expected  602
 
 // ***************************************
 // 8. Check if all array elements are equal
@@ -171,10 +171,10 @@ function ifItemsEqual(arr) {
 // }
 
 // Test Cases:
-console.log(ifItemsEqual([true, true, true, true])); //Expected true
-console.log(ifItemsEqual(['test', 'test', 'test'])); //Expected true
-console.log(ifItemsEqual([1, 1, 1, 2])); // Expected false
-console.log(ifItemsEqual(['10', 10, 10, 10])); //Expected  false
+// console.log(ifItemsEqual([true, true, true, true])); //Expected true
+// console.log(ifItemsEqual(['test', 'test', 'test'])); //Expected true
+// console.log(ifItemsEqual([1, 1, 1, 2])); // Expected false
+// console.log(ifItemsEqual(['10', 10, 10, 10])); //Expected  false
 
 // ***************************************
 // 9. Return the longest string from an array of strings
