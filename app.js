@@ -54,12 +54,12 @@ newArray.unshift('zero');
 
 // Extract the last element of the array and return it.
 
-console.log(newArray.pop()); // four
+// console.log(newArray.pop()); // four
 
 // Extract the first element of the array and return it:
-console.log(newArray.shift()); // zero
+// console.log(newArray.shift()); // zero
 
-console.log(newArray); // (3) ["one", "two", "three"]
+// console.log(newArray); // (3) ["one", "two", "three"]
 
 // *** Array is an object and thus behaves like an object. ***
 
@@ -69,13 +69,13 @@ let fruits = ['Banana'];
 
 let copiedArray = fruits; // copy by reference: (two variables reference the same array)
 
-console.log(fruits === copiedArray); // true
+// console.log(fruits === copiedArray); // true
 
 // modify the array by reference;
 
 copiedArray.push('Melon');
 
-console.log(fruits); // (2) ["Banana", "Melon"]  --> See new item is added into fruits array as well.
+// console.log(fruits); // (2) ["Banana", "Melon"]  --> See new item is added into fruits array as well.
 
 // But what makes arrays really special is their internal representation. The engine tries to store its elements in the contiguous memory area, one after another.
 // there are other optimizations as well, to make arrays work really fast.
@@ -85,7 +85,7 @@ console.log(fruits); // (2) ["Banana", "Melon"]  --> See new item is added into
 let animals = [];
 
 animals[9999] = 7; // assign a property with the index far greater than its length
-console.log(animals.length); // 10000
+// console.log(animals.length); // 10000
 animals.price = 33; // create a property with an arbitrary name
 // That’s possible, because arrays are objects at their base. We can add any properties to them.
 
@@ -142,7 +142,7 @@ function returnItems(arr) {
   return string;
 }
 
-console.log(returnItems(fruitArray));
+// console.log(returnItems(fruitArray));
 // apple mango cherry banana berry
 
 // Better for arrays there is another form of loop, for..of:
@@ -155,7 +155,7 @@ function arrayItems(arr) {
   return string;
 }
 
-console.log(arrayItems(fruitArray));
+// console.log(arrayItems(fruitArray));
 // apple mango cherry banana berry
 
 // The for..of doesn’t give access to the number of the current element, just its value, but in most cases that’s enough. And it’s shorter.
@@ -171,21 +171,47 @@ function arrayAsObjects(arr) {
   return string;
 }
 
-console.log(arrayAsObjects(fruitArray));
+// console.log(arrayAsObjects(fruitArray));
 // apple mango cherry banana berry
 
 //  But that’s actually a bad idea. There are potential problems with it:
 
 // The loop for..in iterates over all properties, not only the numeric ones.
 
-// There are so-called “array-like” objects in the browser and in other environments, that look like arrays. 
-// That is, they have length and indexes properties, but they may also have other non-numeric properties and methods, which we usually don’t need. The for..in loop will list them though. 
+// There are so-called “array-like” objects in the browser and in other environments, that look like arrays.
+// That is, they have length and indexes properties, but they may also have other non-numeric properties and methods, which we usually don’t need. The for..in loop will list them though.
 // So if we need to work with array-like objects, then these “extra” properties can become a problem.
 
-// The for..in loop is optimized for generic objects, not arrays, and thus is 10-100 times slower. 
+// The for..in loop is optimized for generic objects, not arrays, and thus is 10-100 times slower.
 // Of course, it’s still very fast. The speedup may only matter in bottlenecks. But still we should be aware of the difference.
 
 // Generally, we shouldn’t use for..in for arrays.
+
+// ********** A word about “length” ********
+
+//  The length property automatically updates when we modify the array.
+// To be precise, it is actually not the count of values in the array, but the greatest numeric index plus one.
+
+// For instance, a single element with a large index gives a big length:
+let user = [];
+user[123] = 'Garrison';
+// console.log(user.length);   //124
+
+//  Another interesting thing about the length property is that it’s writable.
+
+// If we increase it manually, nothing interesting happens. But if we decrease it, the array is truncated. The process is irreversible,
+let numArrays = [1, 2, 3, 4, 5];
+numArrays.length = 3; // truncate to 2 elements
+// console.log(numArrays); //(3) [1, 2, 3]
+
+numArrays.length = 5; //return back length
+// console.log(numArrays[4]); //undefined -> why?
+
+// So, the simplest way to clear the array is:
+numArrays.length = 0;
+// console.log(numArrays); // []
+
+
 
 
 // https://javascript.info/array
