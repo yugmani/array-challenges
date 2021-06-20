@@ -211,6 +211,26 @@ numArrays.length = 5; //return back length
 numArrays.length = 0;
 // console.log(numArrays); // []
 
+// ********* new Array() *********
+
+let players = new Array();
+// console.log(players); // []
+let soccerPlayers = new Array('Leo', 'Ronaldo', 'Pele');
+// console.log(soccerPlayers);
+
+// It’s rarely used, because square brackets [] are shorter.
+
+// Also there’s a tricky feature with it.
+// If new Array is called with a single argument which is a number, then it creates an array without items, but with the given length.
+
+let numbers = new Array(3); // will it create an array of [3] ?
+// console.log(numbers[0]); // undefined
+// console.log(numbers[1]); // undefined
+// console.log(numbers.length); // 3
+// console.log(numbers); // (3) [empty × 3]length: 3
+// To avoid such surprises, we usually use square brackets, unless we really know what we’re doing.
+
+
 
 
 
