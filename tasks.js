@@ -51,10 +51,49 @@ arr1.push(function() {
 // So we have a call of the function arr1[2] as an object method. Naturally, it receives this referencing the object arr and outputs the array:
 // The array has 3 values: initially it had two, plus the function.
 
+// **********************************
+// 4. Sum input numbers
+// **********************************
 
-// **********************************
-// 2. Array Operations.
-// **********************************
+function userInput() {
+  const numArray = [];
+  function validateInput() {
+    let userValue = parseInt(prompt('Enter the value:'));
+    if (!isNaN(userValue)) {
+      console.log(userValue);
+      numArray.push(userValue);
+      validateInput();
+    }
+  }
+  validateInput();
+  return numArray.reduce((total, current) => total + current);
+}
+
+console.log(userInput());
+
+// Alternate Solution
+// Please note the subtle, but important detail of the solution. We don’t convert value to number instantly after prompt, because after value = +value we would not be able to tell an empty string (stop sign) from the zero (valid number). We do it later instead.
+
+function sumInput() {
+  let numbers = [];
+
+  while (true) {
+    let value = prompt('A number please?', 0);
+
+    // should we cancel?
+    if (value === '' || value === null || !isFinite(value)) break;
+
+    numbers.push(+value);
+  }
+
+  let sum = 0;
+  for (let number of numbers) {
+    sum += number;
+  }
+  return sum;
+}
+
+// alert( sumInput() );
 
 // **********************************
 // 2. Array Operations.
