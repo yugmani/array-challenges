@@ -34,3 +34,28 @@ styles.shift();
 // 5. Prepend Rap and Reggae to the array.
 styles.unshift('Rap', 'Reggae');
 // console.log(styles);  // (4) ["Rap", "Reggae", "Classics", "Rock-n-Roll"]
+
+// **********************************
+// 3. Calling in an array context
+// **********************************
+
+// What is the result? Why?
+let arr1 = ['a', 'b'];
+arr1.push(function() {
+  alert(this);
+});
+
+// console.log(arr1[2]());  // a, b, function(){...}
+// The call arr1[2]() is syntactically the good old obj[method](), in the role of obj we have arr, and in the role of method we have 2.
+
+// So we have a call of the function arr1[2] as an object method. Naturally, it receives this referencing the object arr and outputs the array:
+// The array has 3 values: initially it had two, plus the function.
+
+
+// **********************************
+// 2. Array Operations.
+// **********************************
+
+// **********************************
+// 2. Array Operations.
+// **********************************
