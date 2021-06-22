@@ -8,18 +8,58 @@
 // In fact, many of the built-in array methods will mutate the array itself.
 // This can mean the golden rule from above gets broken, just by using one of the built-in methods.
 
-const myNumbers = [1, 2, 3];
-const countdown = myNumbers.reverse();
-// console.log(countdown); // (3) [3, 2, 1]
-// console.log(myNumbers); // (3) [3, 2, 1]
-// mutated the numbers array as well, this is not what we wanted at all
+// **********************************
+// Mutable Array Methods in JavaScript
+// **********************************
 
-countdown.push(100);
-// console.log(myNumbers); // (4) [3, 2, 1, 100]
+// a. Array.prototype.pop()
+const list1 = ['a', 'b', 'c'];
+const popped = list1.pop();
+// console.log(list1); // ["a", "b"], mutated original array
+// console.log(popped); // "c"
 // WHY ?
 // because they’re both referencing the same array
 // It’s this sort of side effect that can go unnoticed — especially in a large application — and cause some very hard-to-track bugs.
 
-// **********************************
-// Mutable Array Methods in JavaScript
-// **********************************
+// b. Array.prototype.push()
+const list2 = [11, 22, 33];
+const pushed = list2.push(44);
+// console.log(list2); // [11, 22, 33, 44]
+// console.log(pushed); // 4
+
+// c. Array.prototype.shift()
+const list3 = ['x', 'y', 'z'];
+const shifted = list3.shift();
+// console.log(list3); // ["y", "z"]
+// console.log(shifted); // "x"
+
+// d. Array.prototype.unshift()
+const list4 = ['p', 'q', 'r', 's'];
+const ted = list4.unshift('o');
+// console.log(list4); // ["o", "p", "q", "r", "s"]
+// console.log(ted); // 5
+
+// e. Array.prototype.reverse()
+const list5 = [1, 2, 3];
+const countdown = list5.reverse();
+// console.log(countdown); // (3) [3, 2, 1]
+// console.log(list5); // (3) [3, 2, 1]
+// mutated the list5(original) array as well, this is not what we wanted at all
+
+// f. Array.prototype.sort()
+const list6 = ['e', 'b', 'a', 'd', 'c'];
+const sorted = list6.sort();
+console.log(list6); // ["a", "b", "c", "d", "e"]
+console.log(sorted); // ["a", "b", "c", "d", "e"]
+
+const myNumbers = [100, 21, 30, 7];
+const numSorted = myNumbers.sort();
+console.log(myNumbers); // [100, 21, 30, 7]
+console.log(numSorted); // [100, 21, 30, 7]
+// WHY ?
+
+// g. Array.prototype.splice()
+const list7 = ['aa', 'bb', 'cc', 'dd', 'ee'];
+const extracted = list7.splice(0, 2);
+console.log(list7); // ["cc", "dd", "ee"]
+console.log(extracted); // ["aa", "bb"]
