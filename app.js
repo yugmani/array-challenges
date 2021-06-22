@@ -1,5 +1,5 @@
 // *********************************************************
-// Array.at() Will Change How We Access Array Values in JavaScript
+// JavaScript Arrays
 // *********************************************************
 
 const myArray = ['a', 'b', 'c', 'd', 'e'];
@@ -255,13 +255,12 @@ let numToString = String(numeric);
 // console.log([] + 1);    // "1"  ->string
 // console.log([1] + 1);   // "11" ->string
 // console.log([1,2] + 1); // "1,21"
-// Arrays do not have Symbol.toPrimitive, neither a viable valueOf, they implement only toString conversion, 
+// Arrays do not have Symbol.toPrimitive, neither a viable valueOf, they implement only toString conversion,
 // so here [] becomes an empty string, [1] becomes "1" and [1,2] becomes "1,2".
-//  When the binary plus "+" operator adds something to a string, it converts it to a string as well, 
+//  When the binary plus "+" operator adds something to a string, it converts it to a string as well,
 // console.log("" + 1);    // "1"  ->string
 // console.log("1" + 1);   // "11" ->string
 // console.log("1,2" + 1); // "1,21"
-
 
 // ********** Don’t compare arrays with == ********
 
@@ -297,10 +296,7 @@ let numToString = String(numeric);
 
 // So, how to compare arrays?
 
-// That’s simple: don’t use the == operator. 
+// That’s simple: don’t use the == operator.
 // Instead, compare them item-by-item in a loop or using iteration methods explained in the next chapter.
-
-
-
 
 // https://javascript.info/array
