@@ -142,12 +142,39 @@ const reverse = arr => [...arr].reverse();
 
 // console.log(reverse(fruit1));  // ["🍩", "🥕", "🍌", "🍏"]
 
-// This method still uses the Array.prototype.reverse() method, but applies to a copy of the original array that we make using the spread operator. 
+// This method still uses the Array.prototype.reverse() method, but applies to a copy of the original array that we make using the spread operator.
 // There’s nothing wrong with mutating an object immediately after it has been created, which is what we’re doing here.
 
 // v. splice
 // use the spread operator and splice()
-const splice = (arr, start, end)=> [...arr].splice(start, end);
+const splice = (arr, start, end) => [...arr].splice(start, end);
 
 // console.log(splice(fruit1, 0, 2));  // ["🍏", "🍌"]
 
+// vi. Removing an Array Item
+// a function that will return a new array, but with an item at a given index removed
+
+const remove = (arr, index) => [
+  ...arr.slice(0, index),
+  ...arr.slice(index + 1)
+];
+
+// This uses Array.prototype.slice() to slice the array into two halves — either side of the item we want to remove.
+// The first slice returns a new array, copying the original array’s elements until the index before the one specified as an argument.
+// The second slice returns an array with the elements after the one we’re removing, all the way to the end of the original array.
+// Then we put them both together inside a new array using the spread operator.
+const fruit3 = ['🍏', '🍌', '🥕', '🍩'];
+console.log(remove(fruit3, 2)); // ["🍏", "🍌", "🍩"]
+// item of index 2 is removed.
+
+// vii. Adding an Array Item
+// a function that will return a new array with a new value inserted at a specific index
+const insert = (arr, index, value) => [
+  ...arr.slice(0, index),
+  value,
+  ...arr.slice(index)
+];
+//  It creates two slices of the array, but this time includes the element at the index provided.
+// When we put the two slices back together, we insert the value provided as an argument between them both.
+
+console.log(insert(fruit2, 2, '🧁')); // ["🍏", "🍌", "🧁", "🥕", "🍩"]
