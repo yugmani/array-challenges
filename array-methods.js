@@ -93,3 +93,46 @@ const num2 = [10, 7, 25, 8, 3, 15, 23];
 const filtered = num2.filter(n => n > 10);
 // console.log(num2);    // [10, 7, 25, 8, 3, 15, 23]
 // console.log(filtered);  // [25, 15, 23]
+
+// ***************************************
+// Let’s Fix this Mutating Mess!
+// ***************************************
+
+// i. Pop
+// Let’s start by writing a new pop function that returns a copy of the original array but without the last item.
+
+const pop = arr => arr.slice(0, -1);
+
+// The second argument of -1 means stop slicing 1 place before the end.
+
+const food = ['🍏', '🍌', '🥕', '🍩'];
+
+// console.log(pop(food)); // ["🍏", "🍌", "🥕"]
+
+// ii. Push
+// let’s create a push() function that will return a new array, but with a new element appended to the end
+
+const push = (arr, value) => [...arr, value];
+
+// This uses the spread operator to create a copy of the array.
+// It then adds the value provided as the second argument to the end of the new array.
+const fruit1 = ['🍏', '🍌', '🥕', '🍩'];
+
+// console.log(push(fruit1, '🍆')); // ["🍏", "🍌", "🥕", "🍩", "🍆"]
+
+// iii. Shift & Unshift
+// We can write replacements for Array.prototype.shift() and Array.prototype.unshift() similarly
+const shift = arr => arr.slice(1);
+
+// For our shift() function, we’re just slicing off the first element from the array instead of the last.
+const fruit2 = ['🍏', '🍌', '🥕', '🍩'];
+
+// console.log(shift(fruit2)); // ["🍌", "🥕", "🍩"]
+
+// unshift() method will return a new array with a new value appended to the beginning of the array
+
+const unshift = (arr, value) => [value, ...arr];
+
+// console.log(unshift(fruit2, '🍆'))  // ["🍆", "🍏", "🍌", "🥕", "🍩"]
+
+
