@@ -74,3 +74,22 @@ const letters1 = ['p', 'q', 'r', 's'];
 const sliced = letters1.slice(1, 3);
 // console.log(letters1);  // ["p", "q", "r", "s"]
 // console.log(sliced);  // ["q", "r"]
+
+// 2. Array.prototype.concat()
+const letters2 = ['a', 'b'];
+const letters3 = ['c', 'd'];
+const concated = letters2.concat(letters3);
+// console.log(letters2, letters3);  // ["a", "b"], ["c", "d"]
+// console.log(concated);  // ["a", "b", "c", "d"]
+
+// 3. Array.prototype.map()
+const num1 = [1, 2, 3];
+const newNum1 = num1.map(n => n * 3);
+// console.log(num1);  // [1, 2, 3]
+// console.log(newNum1); // [3, 6, 9]
+
+// 4. Array.prototype.filter()
+const num2 = [10, 7, 25, 8, 3, 15, 23];
+const filtered = num2.filter(n => n > 10);
+// console.log(num2);    // [10, 7, 25, 8, 3, 15, 23]
+// console.log(filtered);  // [25, 15, 23]
