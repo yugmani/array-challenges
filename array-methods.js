@@ -49,17 +49,28 @@ const countdown = list5.reverse();
 // f. Array.prototype.sort()
 const list6 = ['e', 'b', 'a', 'd', 'c'];
 const sorted = list6.sort();
-console.log(list6); // ["a", "b", "c", "d", "e"]
-console.log(sorted); // ["a", "b", "c", "d", "e"]
+// console.log(list6); // ["a", "b", "c", "d", "e"]
+// console.log(sorted); // ["a", "b", "c", "d", "e"]
 
 const myNumbers = [100, 21, 30, 7];
 const numSorted = myNumbers.sort();
-console.log(myNumbers); // [100, 21, 30, 7]
-console.log(numSorted); // [100, 21, 30, 7]
+// console.log(myNumbers); // [100, 21, 30, 7]
+// console.log(numSorted); // [100, 21, 30, 7]
 // WHY ?
 
 // g. Array.prototype.splice()
 const list7 = ['aa', 'bb', 'cc', 'dd', 'ee'];
 const extracted = list7.splice(0, 2);
-console.log(list7); // ["cc", "dd", "ee"]
-console.log(extracted); // ["aa", "bb"]
+// console.log(list7); // ["cc", "dd", "ee"]
+// console.log(extracted); // ["aa", "bb"]
+
+// **************************************
+// Immutable Array Methods in JavaScript
+// **************************************
+
+// 1. Array.prototype.slice()
+// Syntax: array.slice(start, end)
+const letters1 = ['p', 'q', 'r', 's'];
+const sliced = letters1.slice(1, 3);
+// console.log(letters1);  // ["p", "q", "r", "s"]
+// console.log(sliced);  // ["q", "r"]
