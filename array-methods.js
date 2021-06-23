@@ -135,4 +135,19 @@ const unshift = (arr, value) => [value, ...arr];
 
 // console.log(unshift(fruit2, '🍆'))  // ["🍆", "🍏", "🍌", "🥕", "🍩"]
 
+// iv. Reverse
+// writing a replacement for the Array.prototype.reverse() method
+// It will return a copy of the array in reverse order, instead of mutating the original array
+const reverse = arr => [...arr].reverse();
+
+// console.log(reverse(fruit1));  // ["🍩", "🥕", "🍌", "🍏"]
+
+// This method still uses the Array.prototype.reverse() method, but applies to a copy of the original array that we make using the spread operator. 
+// There’s nothing wrong with mutating an object immediately after it has been created, which is what we’re doing here.
+
+// v. splice
+// use the spread operator and splice()
+const splice = (arr, start, end)=> [...arr].splice(start, end);
+
+// console.log(splice(fruit1, 0, 2));  // ["🍏", "🍌"]
 
